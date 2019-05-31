@@ -4,36 +4,24 @@
 
 <hr>
 
-<!-- Form review start -->
 <form action="/update_review/<%= @review.id %>" method="post">
-<!-- Form review end -->
 
-  <!-- Label and input for review start -->
   <div class="form-group">
     <label for="review">
       Review
     </label>
 
-    <!-- Input for review start -->
     <input type="text" id="review" name="review" class="form-control" value="<%= @review.review %>">
-    <!-- Input for review end -->
   </div>
-  <!-- Label and input for review end -->
 
-  <!-- Label and input for item_id start -->
   <div class="form-group">
     <label for="item_id">
       Item
     </label>
 
-    <!-- Input for item_id start -->
     <%= select_tag(:item_id, options_from_collection_for_select(Item.all, :id, :restaurant_id, @review.item_id), :class => "form-control") %>
-    <!-- Input for item_id end -->
   </div>
-  <!-- Label and input for item_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update review

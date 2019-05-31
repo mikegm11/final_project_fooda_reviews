@@ -5,21 +5,15 @@
 
 <hr>
 
-<!-- Form item start -->
 <form action="/create_item" method="post">
-<!-- Form item end -->
 
-  <!-- Label and input for restaurant_id start -->
   <div class="form-group">
     <label for="restaurant_id">
       Restaurant
     </label>
 
-    <!-- Input for restaurant_id start -->
     <%= select_tag(:restaurant_id, options_from_collection_for_select(Restaurant.all, :id, :name, @item.restaurant_id), :class => "form-control") %>
-    <!-- Input for restaurant_id end -->
   </div>
-  <!-- Label and input for restaurant_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create item
