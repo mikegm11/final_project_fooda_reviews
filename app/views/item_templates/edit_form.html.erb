@@ -1,0 +1,32 @@
+<h1>
+  Edit item #<%= @item.id %>
+</h1>
+
+<hr>
+
+<!-- Form item start -->
+<form action="/update_item/<%= @item.id %>" method="post">
+<!-- Form item end -->
+
+  <!-- Label and input for restaurant_id start -->
+  <div class="form-group">
+    <label for="restaurant_id">
+      Restaurant
+    </label>
+
+    <!-- Input for restaurant_id start -->
+    <input type="text" id="restaurant_id" name="restaurant_id" class="form-control" value="<%= @item.restaurant_id %>">
+    <!-- Input for restaurant_id end -->
+  </div>
+  <!-- Label and input for restaurant_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update item
+  </button>
+</form>
+
+<hr>
+
+<a href="/items">
+  Go back
+</a>
