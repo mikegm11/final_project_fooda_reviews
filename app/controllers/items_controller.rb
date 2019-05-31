@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @favorite = Favorite.new
+    @review = Review.new
     @item = Item.find(params.fetch("id_to_display"))
 
     render("item_templates/show.html.erb")
@@ -26,6 +28,20 @@ class ItemsController < ApplicationController
       @item.save
 
       redirect_back(:fallback_location => "/items", :notice => "Item created successfully.")
+    else
+      render("item_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_restaurant
+    @item = Item.new
+
+    @item.restaurant_id = params.fetch("restaurant_id")
+
+    if @item.valid?
+      @item.save
+
+      redirect_to("/restaurants/#{@item.restaurant_id}", notice: "Item created successfully.")
     else
       render("item_templates/new_form_with_errors.html.erb")
     end
