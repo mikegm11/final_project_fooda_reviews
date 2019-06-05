@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
     @item = Item.new
 
     @item.restaurant_id = params.fetch("restaurant_id")
+    @item.name = params.fetch("name")
 
     if @item.valid?
       @item.save
@@ -38,6 +39,7 @@ class ItemsController < ApplicationController
     @item = Item.new
 
     @item.restaurant_id = params.fetch("restaurant_id")
+    @item.name = params.fetch("name")
 
     if @item.valid?
       @item.save
@@ -58,6 +60,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params.fetch("id_to_modify"))
 
     @item.restaurant_id = params.fetch("restaurant_id")
+    @item.name = params.fetch("name")
 
     if @item.valid?
       @item.save
